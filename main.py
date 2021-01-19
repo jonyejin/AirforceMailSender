@@ -5,13 +5,6 @@ from bs4 import BeautifulSoup
 s = requests.Session()
 URL = "http://www.airforce.mil.kr:8081/user/indexSub.action?codyMenuSeq=156893223&siteId=last2&menuUIType=sub&dum=dum&command2=getEmailList&searchName=김승진&searchBirth=19990806&memberSeq=247459929"
 res = s.get(URL)
-# soup = BeautifulSoup(res.text, 'html.parser')
-# 인터넷편지쓰기버튼 = soup.find('input', {'value': "인터넷 편지쓰기"})
-# emailFormAction = soup.find('form', {'name': 'emailForm'})
-# command2 = soup.find('input', {'name': 'command2'})
-# command2["value"] = "writeEmail"
-# emailFormAction["action"] = "/user/emailPicEmailIntro.action"
-# # print(emailFormAction)
 INFO = {'':''}
 req = s.post("http://www.airforce.mil.kr:8081/user/emailPicEmailIntro.action", data=INFO)
 print(req.status_code)
